@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/09 22:59:47 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/10 18:35:00 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,31 @@ t_stack	*create_stack(int argc, char **argv)
 	return (stack_a);
 }
 
+void	free_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+	t_stack	*start;
+
+	if (!stack)
+		return;
+
+	start = stack;
+
+	while (stack)
+	{
+		tmp = stack;
+		stack = stack->next;
+
+		if (stack == start)// 循環の終了条件
+		{
+			free(tmp);
+			break;
+		}
+		free(tmp);
+	}
+}
+
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -57,18 +82,16 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	stack_a = create_stack(argc, argv);
 
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
+	marge_sort(&stack_a, &stack_b);
+	marge_operation(&stack_a, &stack_b);
 
-	free(stack_a);
-	free(stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
 
 
-void memo()
+void	memo()
 {
 
 	// string s="123456789";
