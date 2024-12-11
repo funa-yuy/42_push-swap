@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/10 18:35:00 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/11 21:01:02 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ int	main(int argc, char **argv)
 	stack_a = create_stack(argc, argv);
 
 	marge_sort(&stack_a, &stack_b);
-	marge_operation(&stack_a, &stack_b);
+
+
 
 	free_stack(stack_a);
 	free_stack(stack_b);
