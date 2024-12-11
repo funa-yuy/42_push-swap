@@ -6,13 +6,38 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/11 21:01:02 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/12 01:47:43 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+int ft_strlen(char *str)
+{
+    int i;
+
+    i = 0;
+    while (*str != '\0')
+    {
+        str++;
+        i++;
+    }
+    return (i);
+}
+
+// void print_error()
+// {
+//     write(STDERR_FILENO, "Error\n", 6);
+// }
+
+void put_str(char *str)
+{
+    write(1, str, ft_strlen(str));
+}
+
 
 t_stack	*create_stack(int argc, char **argv)
 {
@@ -84,7 +109,15 @@ int	main(int argc, char **argv)
 
 	marge_sort(&stack_a, &stack_b);
 
-
+	t_stack *tmp = stack_a;
+    if (tmp != NULL)
+    {
+        do {
+            printf("%d ", tmp->nbr);
+            tmp = tmp->next;
+        } while (tmp != stack_a);
+    }
+    printf("\n");
 
 	free_stack(stack_a);
 	free_stack(stack_b);

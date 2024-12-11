@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:25:36 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/10 02:29:27 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/12 01:46:52 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	rra(t_stack **stack_a)
 
 	first = *stack_a;
 	*stack_a = first->prev;
+
+	put_str("rra\n");
 }
 
 void	rrb(t_stack **stack_b)
@@ -29,10 +31,12 @@ void	rrb(t_stack **stack_b)
 
 	first = *stack_b;
 	*stack_b = first->prev;
+	put_str("rrb\n");
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
+	put_str("rrr\n");
 }

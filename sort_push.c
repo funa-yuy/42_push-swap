@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:09:46 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/10 02:36:05 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/12 01:47:07 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		(*stack_b)->prev = node;
 		*stack_b = node;
 	}
+	put_str("pb\n");
 }
 
 // stack_bの先頭ノードをstack_aの先頭に移動
@@ -84,4 +85,5 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 		(*stack_a)->prev = node;
 		*stack_a = node;
 	}
+	put_str("pa\n");
 }

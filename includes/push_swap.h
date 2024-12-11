@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:27:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/11 20:40:49 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/12 01:47:57 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
+void put_str(char *str);
+int ft_strlen(char *str);
 void	marge_sort(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b);

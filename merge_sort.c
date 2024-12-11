@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/11 20:40:28 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/12 01:19:25 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 
 void	marge_first_atob(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*first;
-	t_stack	*second;
-	t_stack	*last;
+	int	first;
+	int	second;
+	int	last;
 
-	first = *stack_a;
-	second = first -> next;
-	last = first -> prev;
+	first = (*stack_a) -> nbr;
+	second = (*stack_a) -> next -> nbr;
+	last = (*stack_a) -> prev -> nbr;
 
 	if (first >= second && first >= last)
 	{
@@ -110,13 +110,13 @@ void	marge_operation_atob(t_stack **stack_a, t_stack **stack_b)
 
 void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*first;
-	t_stack	*second;
-	t_stack	*last;
+	int	first;
+	int	second;
+	int	last;
 
-	first = *stack_b;
-	second = first -> next;
-	last = first -> prev;
+	first = (*stack_b) -> nbr;
+	second = (*stack_b) -> next -> nbr;
+	last = (*stack_b) -> prev -> nbr;
 
 	if (first >= second && first >= last)
 	{
