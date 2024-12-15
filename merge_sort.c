@@ -6,14 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/12 01:19:25 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/15 02:44:20 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 
 void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 {
