@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 02:30:42 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/12/15 02:44:03 by miyuu            ###   ########.fr       */
+/*   Created: 2024/12/12 16:18:41 by miyuu             #+#    #+#             */
+/*   Updated: 2024/12/17 00:07:25 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-int	ft_isdigit(int c)
+// int ft_strlen(char *str)
+// {
+//     int i;
+
+//     i = 0;
+//     while (*str != '\0')
+//     {
+//         str++;
+//         i++;
+//     }
+//     return (i);
+// }
+
+// void print_error()
+// {
+//     write(STDERR_FILENO, "Error\n", 6);
+// }
+
+void put_str(char *str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+    write(1, str, ft_strlen(str));
 }

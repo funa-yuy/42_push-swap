@@ -6,13 +6,13 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/15 16:44:47 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/17 21:08:33 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-static int	has_dup(t_stack **stack)
+int	has_dup(t_stack **stack)
 {
 	t_stack	*now_nbr;
 	t_stack	*next_nbr;
@@ -43,7 +43,7 @@ t_stack	*create_stack(int argc, char **argv)
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	if (stack_a == NULL)
 		return (NULL);
-	stack_a -> nbr = ft_atoi(argv[1]);
+	stack_a -> nbr = ps_atoi(argv[1]);
 	// stack_a -> prev = NULL;
 	// stack_a -> next = NULL;
 
@@ -64,7 +64,7 @@ t_stack	*create_stack(int argc, char **argv)
 				return (NULL);
 			node -> prev = tmp;
 			tmp -> next = node;
-			node -> nbr = ft_atoi(argv[i]);
+			node -> nbr = ps_atoi(argv[i]);
 			tmp = tmp -> next;
 			i++;
 		}

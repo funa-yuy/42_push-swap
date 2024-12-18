@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   sort_reverse_rotate.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 16:18:41 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/12 16:18:56 by miyuu            ###   ########.fr       */
+/*   Created: 2024/12/10 02:25:36 by miyuu             #+#    #+#             */
+/*   Updated: 2024/12/16 23:42:23 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
-int ft_strlen(char *str)
+// OK
+void	rra(t_stack **stack_a)
 {
-    int i;
+	t_stack	*first;
 
-    i = 0;
-    while (*str != '\0')
-    {
-        str++;
-        i++;
-    }
-    return (i);
+	first = *stack_a;
+	*stack_a = first->prev;
+
+	put_str("rra\n");
 }
 
-// void print_error()
-// {
-//     write(STDERR_FILENO, "Error\n", 6);
-// }
-
-void put_str(char *str)
+void	rrb(t_stack **stack_b)
 {
-    write(1, str, ft_strlen(str));
+	t_stack	*first;
+
+	first = *stack_b;
+	*stack_b = first->prev;
+	put_str("rrb\n");
+}
+
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	rra(stack_a);
+	rrb(stack_b);
+	put_str("rrr\n");
 }

@@ -6,12 +6,12 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 18:17:27 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/12/15 02:43:56 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/16 23:42:23 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 static unsigned int	ft_substr_count(char const *s, char c)
 {

@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_reverse_rotate.c                              :+:      :+:    :+:   */
+/*   sort_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 02:25:36 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/12 01:46:52 by miyuu            ###   ########.fr       */
+/*   Created: 2024/12/10 02:24:30 by miyuu             #+#    #+#             */
+/*   Updated: 2024/12/16 23:42:23 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 // OK
-void	rra(t_stack **stack_a)
+void	ra(t_stack **stack_a)
 {
 	t_stack	*first;
 
 	first = *stack_a;
-	*stack_a = first->prev;
+	*stack_a = first->next;
 
-	put_str("rra\n");
+	put_str("ra\n");
 }
 
-void	rrb(t_stack **stack_b)
+void	rb(t_stack **stack_b)
 {
 	t_stack	*first;
 
 	first = *stack_b;
-	*stack_b = first->prev;
-	put_str("rrb\n");
+	*stack_b = first->next;
+	put_str("rb\n");
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	rra(stack_a);
-	rrb(stack_b);
-	put_str("rrr\n");
+	ra(stack_a);
+	rb(stack_b);
+	put_str("rr\n");
 }

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ps_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:04:52 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/12/15 15:37:40 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/17 00:14:12 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft.h"
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-long int	ft_atoi_check(const char *str, int i, int sign)
+long int	ps_atoi_check(const char *str, int i, int sign)
 {
 	unsigned long	result;
 	int				digit;
@@ -32,7 +32,7 @@ long int	ft_atoi_check(const char *str, int i, int sign)
 	return (result);
 }
 
-long int	ft_atoi(const char *str)
+long int	ps_atoi(const char *str)
 {
 	int	sign;
 	int	i;
@@ -48,7 +48,7 @@ long int	ft_atoi(const char *str)
 			sign *= -1;
 		i++;
 	}
-	return ((ft_atoi_check(str, i, sign)) * sign);
+	return ((ps_atoi_check(str, i, sign)) * sign);
 }
 
 

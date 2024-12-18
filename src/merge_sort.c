@@ -6,11 +6,31 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/15 02:44:20 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/17 22:34:12 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
+
+int	is_sorted_ascending(t_stack *stack)
+{
+	t_stack	*now_nbr;
+	t_stack	*next_nbr;
+
+	now_nbr = stack;
+	while (now_nbr -> next != stack)
+	{
+		next_nbr = now_nbr;
+		while (next_nbr -> next != stack)
+		{
+			next_nbr = next_nbr -> next;
+			if (now_nbr -> nbr > next_nbr -> nbr)
+				return (0);
+		}
+		now_nbr = now_nbr -> next;
+	}
+	return (1);
+}
 
 void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 {
@@ -22,7 +42,9 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 		if(*stack_a == NULL)
 		{
 			marge_first_btoa(stack_a, stack_b);
-			check = marge_operation_btoa(stack_a, stack_b);
+			marge_operation_btoa(stack_a, stack_b);
+			if (is_sorted_ascending(*stack_a) == 1)
+				break;
 		}
 		else if(*stack_b == NULL)
 		{
@@ -131,23 +153,19 @@ void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-int	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b)
+void	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b)
 {
 	int	first;
 	int	second;
 	int	last;
 	int	b_first;
-	int	check;
 
-	check = 0;
 	while (*stack_b != NULL)
 	{
 		first = (*stack_b) -> nbr;
 		second = (*stack_b) -> next -> nbr;
 		last = (*stack_b) -> prev -> nbr;
 		b_first = (*stack_a) -> nbr;
-		if ((check == 0) && ((b_first - first < 0) || (b_first - second < 0) || (b_first - last < 0)))
-			check = -1;
 
 		if ((b_first - first >= 0) && ((b_first - second < 0) || b_first - first <= b_first - second) && ((b_first - last < 0) || b_first - first <= b_first - last))
 		{
@@ -178,6 +196,5 @@ int	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b)
 			pa(stack_a, stack_b);
 		}
 	}
-	return (check);
 }
 

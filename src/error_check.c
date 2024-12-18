@@ -6,11 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 19:40:24 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/15 15:31:03 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/17 00:12:07 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 // int	ft_strcmp(char *s1, char *s2)
 // {
@@ -27,7 +27,7 @@
 // 	return (*s1_ptr - *s2_ptr);
 // }
 
-static int	is_intstr(char *str)
+int	is_intstr(char *str)
 {
 	if (*str == '-' || *str == '+')
 		str++;
@@ -42,14 +42,14 @@ static int	is_intstr(char *str)
 	return (true);
 }
 
-static int	is_int(char *str)
+int	is_int(char *str)
 {
 	long int	li;
 
 	if (is_intstr(str) == false)
 		return (false);
 	li = 0;
-	li = ft_atoi(str);
+	li = ps_atoi(str);
 	if (li > INT_MAX || li < INT_MIN)
 		return (false);
 	return (true);

@@ -6,11 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:23:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/12 01:46:25 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/16 23:42:23 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 
