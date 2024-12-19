@@ -6,13 +6,13 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/17 22:34:12 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/19 15:09:33 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	is_sorted_ascending(t_stack *stack)
+int	sort_check(t_stack *stack)
 {
 	t_stack	*now_nbr;
 	t_stack	*next_nbr;
@@ -42,14 +42,16 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 		if(*stack_a == NULL)
 		{
 			marge_first_btoa(stack_a, stack_b);
-			marge_operation_btoa(stack_a, stack_b);
-			if (is_sorted_ascending(*stack_a) == 1)
+			// marge_operation_btoa(stack_a, stack_b);
+			marge_descend_btoa(stack_a, stack_b);
+			if (sort_check(*stack_a) == 1)
 				break;
 		}
 		else if(*stack_b == NULL)
 		{
 			marge_first_atob(stack_a, stack_b);
-			marge_operation_atob(stack_a, stack_b);
+			// marge_operation_atob(stack_a, stack_b);
+			marge_descend_atob(stack_a, stack_b);
 		}
 	}
 }
@@ -80,50 +82,50 @@ void	marge_first_atob(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	marge_operation_atob(t_stack **stack_a, t_stack **stack_b)
-{
-	int	first;
-	int	second;
-	int	last;
-	int	b_first;
+// void	marge_operation_atob(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	int	first;
+// 	int	second;
+// 	int	last;
+// 	int	b_first;
 
-	while (*stack_a != NULL)
-	{
-		first = (*stack_a) -> nbr;
-		second = (*stack_a) -> next -> nbr;
-		last = (*stack_a) -> prev -> nbr;
-		b_first = (*stack_b) -> nbr;
+// 	while (*stack_a != NULL)
+// 	{
+// 		first = (*stack_a) -> nbr;
+// 		second = (*stack_a) -> next -> nbr;
+// 		last = (*stack_a) -> prev -> nbr;
+// 		b_first = (*stack_b) -> nbr;
 
-		if ((b_first - first >= 0) && ((b_first - second < 0) || b_first - first <= b_first - second) && ((b_first - last < 0) || b_first - first <= b_first - last))
-		{
-			pb(stack_a, stack_b);
-		}
-		else if ((b_first - second >= 0) && ((b_first - first < 0) || b_first - second <= b_first - first) && ((b_first - last < 0) || b_first - second <= b_first - last))
-		{
-			sa(stack_a);//raでもよき？
-			pb(stack_a, stack_b);
-		}
-		else  if ((b_first - last >= 0) && ((b_first - first < 0) || b_first - last <= b_first - first) && ((b_first - second < 0) || b_first - last <= b_first - second))
-		{
-			rra(stack_a);
-			pb(stack_a, stack_b);
-		}
-		else if ((b_first - first < 0) && ((b_first - second >= 0) || b_first - first >= b_first - second) && ((b_first - last < 0) || b_first - first >= b_first - last))
-		{
-			pb(stack_a, stack_b);
-		}
-		else if ((b_first - second < 0) && ((b_first - first >= 0) || b_first - second >= b_first - first) && ((b_first - last >= 0) || b_first - second >= b_first - last))
-		{
-			sa(stack_a);//raでもよき？
-			pb(stack_a, stack_b);
-		}
-		else  if ((b_first - last < 0) && ((b_first - first >= 0) || b_first - last >= b_first - first) && ((b_first - second >= 0) || b_first - last >= b_first - second))
-		{
-			rra(stack_a);
-			pb(stack_a, stack_b);
-		}
-	}
-}
+// 		if ((b_first - first >= 0) && ((b_first - second < 0) || b_first - first <= b_first - second) && ((b_first - last < 0) || b_first - first <= b_first - last))
+// 		{
+// 			pb(stack_a, stack_b);
+// 		}
+// 		else if ((b_first - second >= 0) && ((b_first - first < 0) || b_first - second <= b_first - first) && ((b_first - last < 0) || b_first - second <= b_first - last))
+// 		{
+// 			sa(stack_a);//raでもよき？
+// 			pb(stack_a, stack_b);
+// 		}
+// 		else  if ((b_first - last >= 0) && ((b_first - first < 0) || b_first - last <= b_first - first) && ((b_first - second < 0) || b_first - last <= b_first - second))
+// 		{
+// 			rra(stack_a);
+// 			pb(stack_a, stack_b);
+// 		}
+// 		else if ((b_first - first < 0) && ((b_first - second >= 0) || b_first - first >= b_first - second) && ((b_first - last < 0) || b_first - first >= b_first - last))
+// 		{
+// 			pb(stack_a, stack_b);
+// 		}
+// 		else if ((b_first - second < 0) && ((b_first - first >= 0) || b_first - second >= b_first - first) && ((b_first - last >= 0) || b_first - second >= b_first - last))
+// 		{
+// 			sa(stack_a);//raでもよき？
+// 			pb(stack_a, stack_b);
+// 		}
+// 		else  if ((b_first - last < 0) && ((b_first - first >= 0) || b_first - last >= b_first - first) && ((b_first - second >= 0) || b_first - last >= b_first - second))
+// 		{
+// 			rra(stack_a);
+// 			pb(stack_a, stack_b);
+// 		}
+// 	}
+// }
 
 
 
@@ -153,48 +155,48 @@ void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b)
-{
-	int	first;
-	int	second;
-	int	last;
-	int	b_first;
+// void	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b)
+// {
+// 	int	first;
+// 	int	second;
+// 	int	last;
+// 	int	b_first;
 
-	while (*stack_b != NULL)
-	{
-		first = (*stack_b) -> nbr;
-		second = (*stack_b) -> next -> nbr;
-		last = (*stack_b) -> prev -> nbr;
-		b_first = (*stack_a) -> nbr;
+// 	while (*stack_b != NULL)
+// 	{
+// 		first = (*stack_b) -> nbr;
+// 		second = (*stack_b) -> next -> nbr;
+// 		last = (*stack_b) -> prev -> nbr;
+// 		b_first = (*stack_a) -> nbr;
 
-		if ((b_first - first >= 0) && ((b_first - second < 0) || b_first - first <= b_first - second) && ((b_first - last < 0) || b_first - first <= b_first - last))
-		{
-			pa(stack_a, stack_b);
-		}
-		else if ((b_first - second >= 0) && ((b_first - first < 0) || b_first - second <= b_first - first) && ((b_first - last < 0) || b_first - second <= b_first - last))
-		{
-			sb(stack_b);//raでもよき？
-			pa(stack_a, stack_b);
-		}
-		else  if ((b_first - last >= 0) && ((b_first - first < 0) || b_first - last <= b_first - first) && ((b_first - second < 0) || b_first - last <= b_first - second))
-		{
-			rrb(stack_b);
-			pa(stack_a, stack_b);
-		}
-		else if ((b_first - first < 0) && ((b_first - second >= 0) || b_first - first >= b_first - second) && ((b_first - last < 0) || b_first - first >= b_first - last))
-		{
-			pa(stack_a, stack_b);
-		}
-		else if ((b_first - second < 0) && ((b_first - first >= 0) || b_first - second >= b_first - first) && ((b_first - last >= 0) || b_first - second >= b_first - last))
-		{
-			sb(stack_b);//raでもよき？
-			pa(stack_a, stack_b);
-		}
-		else  if ((b_first - last < 0) && ((b_first - first >= 0) || b_first - last >= b_first - first) && ((b_first - second >= 0) || b_first - last >= b_first - second))
-		{
-			rrb(stack_b);
-			pa(stack_a, stack_b);
-		}
-	}
-}
+// 		if ((b_first - first >= 0) && ((b_first - second < 0) || b_first - first <= b_first - second) && ((b_first - last < 0) || b_first - first <= b_first - last))
+// 		{
+// 			pa(stack_a, stack_b);
+// 		}
+// 		else if ((b_first - second >= 0) && ((b_first - first < 0) || b_first - second <= b_first - first) && ((b_first - last < 0) || b_first - second <= b_first - last))
+// 		{
+// 			sb(stack_b);//raでもよき？
+// 			pa(stack_a, stack_b);
+// 		}
+// 		else  if ((b_first - last >= 0) && ((b_first - first < 0) || b_first - last <= b_first - first) && ((b_first - second < 0) || b_first - last <= b_first - second))
+// 		{
+// 			rrb(stack_b);
+// 			pa(stack_a, stack_b);
+// 		}
+// 		else if ((b_first - first < 0) && ((b_first - second >= 0) || b_first - first >= b_first - second) && ((b_first - last < 0) || b_first - first >= b_first - last))
+// 		{
+// 			pa(stack_a, stack_b);
+// 		}
+// 		else if ((b_first - second < 0) && ((b_first - first >= 0) || b_first - second >= b_first - first) && ((b_first - last >= 0) || b_first - second >= b_first - last))
+// 		{
+// 			sb(stack_b);//raでもよき？
+// 			pa(stack_a, stack_b);
+// 		}
+// 		else  if ((b_first - last < 0) && ((b_first - first >= 0) || b_first - last >= b_first - first) && ((b_first - second >= 0) || b_first - last >= b_first - second))
+// 		{
+// 			rrb(stack_b);
+// 			pa(stack_a, stack_b);
+// 		}
+// 	}
+// }
 

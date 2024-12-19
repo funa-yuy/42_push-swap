@@ -6,7 +6,7 @@
 #    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/12/17 00:11:26 by miyuu            ###   ########.fr        #
+#    Updated: 2024/12/19 15:03:28 by miyuu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,11 @@ merge_sort.c \
 sort_push.c \
 sort_reverse_rotate.c \
 sort_rotate.c \
-sort_swap.c
+sort_swap.c \
+test.c #←削除
+
+
+
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
 # Object files

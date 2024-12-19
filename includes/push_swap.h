@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:27:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/17 22:34:26 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/19 14:59:13 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,15 @@ void	put_str(char *str);
 void	marge_sort(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b);
-void	marge_operation_atob(t_stack **stack_a, t_stack **stack_b);
-void	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b);
+// void	marge_operation_atob(t_stack **stack_a, t_stack **stack_b);
+// void	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b);
+void	marge_ascend_atob(t_stack **stack_a, t_stack **stack_b);
+void	marge_descend_atob(t_stack **stack_a, t_stack **stack_b);
+void	marge_ascend_btoa(t_stack **stack_a, t_stack **stack_b);
+void	marge_descend_btoa(t_stack **stack_a, t_stack **stack_b);
+
+
+
 void	pb(t_stack **stack_a, t_stack **stack_b);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	sa(t_stack **stack_a);
@@ -46,7 +53,7 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
-int is_sorted_ascending(t_stack *stack);
+int sort_check(t_stack *stack);
 // チェック
 // long int	ft_atoi(const char *str);
 long int	ps_atoi(const char *str);
