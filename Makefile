@@ -6,11 +6,11 @@
 #    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/12/19 15:03:28 by miyuu            ###   ########.fr        #
+#    Updated: 2024/12/22 11:33:57 by miyuu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc -g
+CC = cc -g -fsanitize=address
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
@@ -28,7 +28,8 @@ sort_push.c \
 sort_reverse_rotate.c \
 sort_rotate.c \
 sort_swap.c \
-test.c #←削除
+merge_operations.c \
+merge_diff.c
 
 
 

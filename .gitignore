@@ -2,4 +2,9 @@ a.out
 .DS_Store
 a.out.dSYM/
 push_swap_tester/
+Push-Swap-Tester/
+push_swap_test.sh
+traces.txt
 result.txt
+checker_Mac
+checker_linux

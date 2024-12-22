@@ -6,26 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 19:40:24 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/17 00:12:07 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/22 11:43:13 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-// int	ft_strcmp(char *s1, char *s2)
-// {
-// 	unsigned char	*s1_ptr;
-// 	unsigned char	*s2_ptr;
-
-// 	s1_ptr = (unsigned char *)s1;
-// 	s2_ptr = (unsigned char *)s2;
-// 	while (*s1_ptr != '\0' && *s1_ptr == *s2_ptr)
-// 	{
-// 		s1_ptr++;
-// 		s2_ptr++;
-// 	}
-// 	return (*s1_ptr - *s2_ptr);
-// }
 
 int	is_intstr(char *str)
 {
@@ -54,29 +39,6 @@ int	is_int(char *str)
 		return (false);
 	return (true);
 }
-
-// static int	has_dup(char **str_arr)
-// {
-// 	size_t	i;
-// 	size_t	j;
-// 	char	*word;
-
-// 	i = 0;
-// 	word = NULL;
-// 	while (str_arr[i])
-// 	{
-// 		word = str_arr[i];
-// 		j = i + 1;
-// 		while (str_arr[j])
-// 		{
-// 			if (ft_strcmp(word, str_arr[j]) == 0)
-// 				return (true);
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	return (false);
-// }
 
 int	error_check(int argc, char **argv)
 {

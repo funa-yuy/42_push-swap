@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:25:36 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/16 23:42:23 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/22 11:41:01 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// OK
 void	rra(t_stack **stack_a)
 {
 	t_stack	*first;

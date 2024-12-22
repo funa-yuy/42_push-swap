@@ -6,11 +6,10 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:04:52 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/12/17 00:14:12 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/22 11:42:32 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
 #include "../includes/push_swap.h"
 
 long int	ps_atoi_check(const char *str, int i, int sign)

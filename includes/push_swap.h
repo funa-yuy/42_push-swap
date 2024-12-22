@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:27:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/19 14:59:13 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/22 11:33:21 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ void	marge_first_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b);
 // void	marge_operation_atob(t_stack **stack_a, t_stack **stack_b);
 // void	marge_operation_btoa(t_stack **stack_a, t_stack **stack_b);
+void	marge_sort_atob(t_stack **stack_a, t_stack **stack_b);
+void	marge_sort_btoa(t_stack **stack_a, t_stack **stack_b);
+int	ascend_or_descend(t_stack **stack_src, t_stack **stack_dest, int check);
+int	calc_diff_descend(int target, int first, int second, int last);
+int	calc_diff_ascend(int target, int first, int second, int last);
+long long safe_diff(long long int a, long long int b);
 void	marge_ascend_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_descend_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_ascend_btoa(t_stack **stack_a, t_stack **stack_b);

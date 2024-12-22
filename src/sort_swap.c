@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:23:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/16 23:42:23 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/22 11:40:51 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-// stack_aの先頭2つのノードを交換
 void	sa(t_stack **stack_a)
 {
 	t_stack	*first;
@@ -39,7 +37,6 @@ void	sa(t_stack **stack_a)
 	put_str("sa\n");
 }
 
-// stack_bの先頭2つのノードを交換
 void	sb(t_stack **stack_b)
 {
 	t_stack	*first;
