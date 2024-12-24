@@ -6,96 +6,36 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/22 12:48:08 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/25 04:10:01 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	has_dup(t_stack **stack)
+void	test_print(t_stack *stack, char *str)
 {
-	t_stack	*now_nbr;
-	t_stack	*next_nbr;
-
-	now_nbr = *stack;
-	while (now_nbr -> next != *stack)
+	t_stack *tmp = stack;
+	if (tmp != NULL)
 	{
-		next_nbr = now_nbr;
-		while (next_nbr -> next != *stack)
-		{
-			next_nbr = next_nbr -> next;
-			if (now_nbr -> nbr - next_nbr -> nbr == 0)
-				return (true);
-		}
-		now_nbr = now_nbr -> next;
+		do {
+			printf("%s：%d ", str, tmp->nbr);
+			tmp = tmp->next;
+		} while (tmp != stack);
 	}
-	return (false);
+	printf("\n");
 }
 
-t_stack	*create_stack(int argc, char **argv)
+void	test(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	*stack_a;
-	t_stack	*tmp;
-	t_stack	*node;
-	int		i;
-
-	stack_a = NULL;
-	stack_a = (t_stack *)malloc(sizeof(t_stack));
-	if (stack_a == NULL)
-		return (NULL);
-	stack_a -> nbr = ps_atoi(argv[1]);
-	// stack_a -> prev = NULL;
-	// stack_a -> next = NULL;
-
-	if (argc == 2)
-	{
-		stack_a -> prev = stack_a;
-		stack_a -> next = stack_a;
-		return (stack_a);
-	}
-	else
-	{
-		tmp = stack_a;
-		i = 2;
-		while (argc - 1 >= i)
-		{
-			node = (t_stack *)malloc(sizeof(t_stack));
-			if (node == NULL)
-				return (NULL);
-			node -> prev = tmp;
-			tmp -> next = node;
-			node -> nbr = ps_atoi(argv[i]);
-			tmp = tmp -> next;
-			i++;
-		}
-		stack_a -> prev = node;
-		node -> next = stack_a;
-	}
-	return (stack_a);
-}
-
-void	free_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-	t_stack	*start;
-
-	if (!stack)
-		return;
-
-	start = stack;
-
-	while (stack)
-	{
-		tmp = stack;
-		stack = stack->next;
-
-		if (stack == start)// 循環の終了条件
-		{
-			free(tmp);
-			break;
-		}
-		free(tmp);
-	}
+	pb(&stack_a, &stack_b);
+	test_print(stack_a, "stack_a");
+	test_print(stack_b, "stack_b");
+	pb(&stack_a, &stack_b);
+	test_print(stack_a, "stack_a");
+	test_print(stack_b, "stack_b");
+	pa(&stack_a, &stack_b);
+	test_print(stack_a, "stack_a");
+	test_print(stack_b, "stack_b");
 }
 
 int	main(int argc, char **argv)
@@ -104,7 +44,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 
 	if (argc == 1)
-		return(0);
+		return (0);
 	if (error_check(argc, argv) == -1)
 	{
 		ft_putendl_fd("Error", STDERR_FILENO);
@@ -114,25 +54,14 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = create_stack(argc, argv);
-
 	if (has_dup(&stack_a) == true)
 	{
 		ft_putendl_fd("Error", STDERR_FILENO);
 		free_stack(stack_a);
 		return (-1);
 	}
-
-	marge_sort(&stack_a, &stack_b);
-
-	t_stack *tmp = stack_a;
-    if (tmp != NULL)
-    {
-        do {
-            printf("%d ", tmp->nbr);
-            tmp = tmp->next;
-        } while (tmp != stack_a);
-    }
-    printf("\n");
+	// marge_sort(&stack_a, &stack_b);
+	test(stack_a, stack_b);
 
 	free_stack(stack_a);
 	free_stack(stack_b);

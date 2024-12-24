@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:27:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/22 11:33:21 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/25 04:25:48 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-void	put_str(char *str);
-// int		ft_strlen(char *str);
 void	marge_sort(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b);
@@ -45,10 +43,16 @@ void	marge_descend_atob(t_stack **stack_a, t_stack **stack_b);
 void	marge_ascend_btoa(t_stack **stack_a, t_stack **stack_b);
 void	marge_descend_btoa(t_stack **stack_a, t_stack **stack_b);
 
+t_stack	*create_stack(int argc, char **argv);
+t_stack	*create_node(int nbr);
+void	add_node_to_stack(t_stack **stack, t_stack *new_node);
 
+void	free_stack(t_stack *stack);
 
 void	pb(t_stack **stack_a, t_stack **stack_b);
 void	pa(t_stack **stack_a, t_stack **stack_b);
+void	remove_targe_node(t_stack **s_dst, t_stack *node);
+void	push_to_dst(t_stack **s_src, t_stack *node);
 void	sa(t_stack **stack_a);
 void	sb(t_stack **stack_b);
 void	ss(t_stack **stack_a, t_stack **stack_b);

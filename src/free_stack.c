@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 16:18:41 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/25 03:37:04 by miyuu            ###   ########.fr       */
+/*   Created: 2024/12/25 03:39:06 by miyuu             #+#    #+#             */
+/*   Updated: 2024/12/25 03:39:38 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// void print_error()
-// {
-//     write(STDERR_FILENO, "Error\n", 6);
-// }
-
-void	put_str(char *str)
+void	free_stack(t_stack *stack)
 {
-	write(1, str, ft_strlen(str));
+	t_stack	*tmp;
+	t_stack	*start;
+
+	if (!stack)
+		return ;
+
+	start = stack;
+
+	while (stack)
+	{
+		tmp = stack;
+		stack = stack->next;
+
+		if (stack == start)
+		{
+			free(tmp);
+			break ;
+		}
+		free(tmp);
+	}
 }
