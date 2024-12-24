@@ -6,13 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:23:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/22 11:40:51 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/24 13:15:50 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void	sa(t_stack **stack_a)
 {
@@ -24,7 +22,6 @@ void	sa(t_stack **stack_a)
 	first = *stack_a;
 	second = first->next;
 
-	// リンクの更新
 	first->prev->next = second;
 	second->prev = first->prev;
 	first->next = second->next;
@@ -34,7 +31,7 @@ void	sa(t_stack **stack_a)
 
 	*stack_a = second;
 
-	put_str("sa\n");
+	ft_putendl_fd("sa", STDOUT_FILENO);
 }
 
 void	sb(t_stack **stack_b)
@@ -47,7 +44,6 @@ void	sb(t_stack **stack_b)
 	first = *stack_b;
 	second = first->next;
 
-	// リンクの更新
 	first->prev->next = second;
 	second->prev = first->prev;
 	first->next = second->next;
@@ -57,7 +53,7 @@ void	sb(t_stack **stack_b)
 
 	*stack_b = second;
 
-	put_str("sb\n");
+	ft_putendl_fd("sb", STDOUT_FILENO);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
@@ -65,5 +61,5 @@ void	ss(t_stack **stack_a, t_stack **stack_b)
 	sa(stack_a);
 	sb(stack_b);
 
-	put_str("ss\n");
+	ft_putendl_fd("ss", STDOUT_FILENO);
 }

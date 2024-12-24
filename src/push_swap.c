@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/19 15:09:59 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/22 12:48:08 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	main(int argc, char **argv)
 		return(0);
 	if (error_check(argc, argv) == -1)
 	{
-		write(2, "Error\n", 6);
+		ft_putendl_fd("Error", STDERR_FILENO);
 		return (-1);
 	}
 
@@ -117,7 +117,7 @@ int	main(int argc, char **argv)
 
 	if (has_dup(&stack_a) == true)
 	{
-		write(2, "Error\n", 6);
+		ft_putendl_fd("Error", STDERR_FILENO);
 		free_stack(stack_a);
 		return (-1);
 	}

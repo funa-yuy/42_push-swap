@@ -6,15 +6,12 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 18:09:46 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/17 00:30:20 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/24 13:17:17 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-// OKstack_aの先頭ノードをstack_bの先頭に移動
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*node;
@@ -22,11 +19,9 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_a == NULL)
 		exit (1);
 	node = *stack_a;
-	// stack_aから取り外し
-	if (node->next == node) // stack_aに1つのノードしかない場合
-	{
+
+	if (node->next == node)
 		*stack_a = NULL;
-	}
 	else
 	{
 		node->prev->next = node->next;
@@ -48,10 +43,9 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 		(*stack_b)->prev = node;
 		*stack_b = node;
 	}
-	put_str("pb\n");
+	ft_putendl_fd("pb", STDOUT_FILENO);
 }
 
-// stack_bの先頭ノードをstack_aの先頭に移動
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*node;
@@ -59,11 +53,8 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_b == NULL)
 		exit (1);
 	node = *stack_b;
-	// stack_bから取り外し
-	if (node->next == node) // stack_bに1つのノードしかない場合
-	{
+	if (node->next == node)
 		*stack_b = NULL;
-	}
 	else
 	{
 		node->prev->next = node->next;
@@ -85,5 +76,5 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 		(*stack_a)->prev = node;
 		*stack_a = node;
 	}
-	put_str("pa\n");
+	ft_putendl_fd("pa", STDOUT_FILENO);
 }

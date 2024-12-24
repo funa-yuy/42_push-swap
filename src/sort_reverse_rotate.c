@@ -6,13 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:25:36 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/22 11:41:01 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/24 13:16:05 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 void	rra(t_stack **stack_a)
 {
@@ -21,7 +19,7 @@ void	rra(t_stack **stack_a)
 	first = *stack_a;
 	*stack_a = first->prev;
 
-	put_str("rra\n");
+	ft_putendl_fd("rra", STDOUT_FILENO);
 }
 
 void	rrb(t_stack **stack_b)
@@ -30,12 +28,13 @@ void	rrb(t_stack **stack_b)
 
 	first = *stack_b;
 	*stack_b = first->prev;
-	put_str("rrb\n");
+
+	ft_putendl_fd("rrb", STDOUT_FILENO);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rra(stack_a);
 	rrb(stack_b);
-	put_str("rrr\n");
+	ft_putendl_fd("rrr", STDOUT_FILENO);
 }
