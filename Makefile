@@ -6,7 +6,7 @@
 #    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/12/25 04:23:40 by miyuu            ###   ########.fr        #
+#    Updated: 2024/12/26 20:42:49 by miyuu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ LIBFT_DIR = ./libft
 SRC_FILES = create_stack.c \
 push_swap.c \
 free_stack.c \
+marge_move.c \
 ps_atoi.c \
 error_check.c \
 merge_sort.c \
