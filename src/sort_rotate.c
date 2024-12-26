@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:24:30 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/24 13:15:56 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/26 21:41:23 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ra(t_stack **stack_a)
 
 	first = *stack_a;
 	*stack_a = first->next;
-
 	ft_putendl_fd("ra", STDOUT_FILENO);
 }
 

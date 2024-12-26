@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 04:09:55 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/25 04:24:23 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/26 21:37:41 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ t_stack	*create_stack(int argc, char **argv)
 		add_node_to_stack(&stack, new_node);
 		i++;
 	}
-
 	return (stack);
 }
 

@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:35:16 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/25 03:32:52 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/26 21:39:10 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	calc_diff_descend(int target, int first, int second, int last)
 	diff_f = safe_diff(target, first);
 	diff_s = safe_diff(target, second);
 	diff_l = safe_diff(target, last);
-
 	if ((target > first) && (diff_f <= diff_s || target < second) \
 		&& (diff_f <= diff_l || target < last))
 	{
@@ -47,7 +46,6 @@ int	calc_diff_ascend(int target, int first, int second, int last)
 	diff_f = safe_diff(target, first);
 	diff_s = safe_diff(target, second);
 	diff_l = safe_diff(target, last);
-
 	if ((target < first) && (diff_f >= diff_s || target > second) \
 		&& (diff_f >= diff_l || target > last))
 	{

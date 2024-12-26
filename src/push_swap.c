@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 20:43:55 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/26 23:54:45 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,19 @@
 
 void	test_print(t_stack *stack, char *str)
 {
-	t_stack *tmp = stack;
+	t_stack	*tmp;
+
+	tmp = stack;
 	printf("%s: ", str);
 	if (tmp != NULL)
 	{
-		do {
-			printf("%d ", tmp->nbr);
-			tmp = tmp->next;
-		} while (tmp != stack);
+		do
+		{
+		printf("%d ", tmp->nbr);
+		tmp = tmp->next;
+		}
+		while
+		(tmp != stack);
 	}
 	printf("\n");
 }
@@ -51,7 +56,6 @@ int	main(int argc, char **argv)
 		ft_putendl_fd("Error", STDERR_FILENO);
 		return (-1);
 	}
-
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_a = create_stack(argc, argv);
@@ -64,12 +68,10 @@ int	main(int argc, char **argv)
 	marge_sort(&stack_a, &stack_b);
 	test_print(stack_a, "stack_a");
 	// test(stack_a, stack_b);
-
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
 }
-
 
 // void	memo()
 // {
@@ -87,8 +89,6 @@ int	main(int argc, char **argv)
 	// char string[6] = "aiueo";
 	// char c = 'a';
 	// struct s_stack *p1,*p2,*p3;
-
-
 /*
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	if (stack_a == NULL);
@@ -112,8 +112,6 @@ int	main(int argc, char **argv)
 
 	// if (argc == 1)
 	// 	return (1);
-
-≈
 
 	p2 -> next  = &p3;
 

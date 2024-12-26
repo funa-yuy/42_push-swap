@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 20:35:56 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/26 21:41:45 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@ void	marge_first_atob(t_stack **stack_a, t_stack **stack_b)
 	int	second;
 	int	last;
 
-	first = (*stack_a) -> nbr;
-	second = (*stack_a) -> next -> nbr;
-	last = (*stack_a) -> prev -> nbr;
-
+	first = (*stack_a)-> nbr;
+	second = (*stack_a)-> next-> nbr;
+	last = (*stack_a)-> prev-> nbr;
 	if (first >= second && first >= last)
 	{
 		pb(stack_a, stack_b);
 	}
 	else if (second >= first && second >= last)
 	{
-		sa(stack_a);//raでもよき？
+		sa(stack_a);
 		pb(stack_a, stack_b);
 	}
 	else
@@ -44,17 +43,16 @@ void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b)
 	int	second;
 	int	last;
 
-	first = (*stack_b) -> nbr;
-	second = (*stack_b) -> next -> nbr;
-	last = (*stack_b) -> prev -> nbr;
-
+	first = (*stack_b)-> nbr;
+	second = (*stack_b)-> next-> nbr;
+	last = (*stack_b)-> prev-> nbr;
 	if (first >= second && first >= last)
 	{
 		pa(stack_a, stack_b);
 	}
 	else if (second >= first && second >= last)
 	{
-		sb(stack_b);//raでもよき？
+		sb(stack_b);
 		pa(stack_a, stack_b);
 	}
 	else
@@ -105,3 +103,4 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 		}
 	}
 }
+// メモ：else if (second >= first && second >= last)ないのsa・sbはra・rbでもよき？

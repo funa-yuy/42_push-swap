@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 03:39:06 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/25 03:39:38 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/26 21:42:50 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ void	free_stack(t_stack *stack)
 
 	if (!stack)
 		return ;
-
 	start = stack;
-
 	while (stack)
 	{
 		tmp = stack;
 		stack = stack->next;
-
 		if (stack == start)
 		{
 			free(tmp);
