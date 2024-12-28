@@ -6,43 +6,43 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 23:54:45 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/28 13:40:10 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	test_print(t_stack *stack, char *str)
-{
-	t_stack	*tmp;
+// void	test_print(t_stack *stack, char *str)
+// {
+// 	t_stack	*tmp;
 
-	tmp = stack;
-	printf("%s: ", str);
-	if (tmp != NULL)
-	{
-		do
-		{
-		printf("%d ", tmp->nbr);
-		tmp = tmp->next;
-		}
-		while
-		(tmp != stack);
-	}
-	printf("\n");
-}
+// 	tmp = stack;
+// 	printf("%s: ", str);
+// 	if (tmp != NULL)
+// 	{
+// 		do
+// 		{
+// 		printf("%d ", tmp->nbr);
+// 		tmp = tmp->next;
+// 		}
+// 		while
+// 		(tmp != stack);
+// 	}
+// 	printf("\n");
+// }
 
-void	test(t_stack *stack_a, t_stack *stack_b)
-{
-	pb(&stack_a, &stack_b);
-	test_print(stack_a, "stack_a");
-	test_print(stack_b, "stack_b");
-	pb(&stack_a, &stack_b);
-	test_print(stack_a, "stack_a");
-	test_print(stack_b, "stack_b");
-	pa(&stack_a, &stack_b);
-	test_print(stack_a, "stack_a");
-	test_print(stack_b, "stack_b");
-}
+// void	test(t_stack *stack_a, t_stack *stack_b)
+// {
+// 	pb(&stack_a, &stack_b);
+// 	test_print(stack_a, "stack_a");
+// 	test_print(stack_b, "stack_b");
+// 	pb(&stack_a, &stack_b);
+// 	test_print(stack_a, "stack_a");
+// 	test_print(stack_b, "stack_b");
+// 	pa(&stack_a, &stack_b);
+// 	test_print(stack_a, "stack_a");
+// 	test_print(stack_b, "stack_b");
+// }
 
 int	main(int argc, char **argv)
 {
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
-	if (error_check(argc, argv) == -1)
+	if (error_check(argv) == -1)
 	{
 		ft_putendl_fd("Error", STDERR_FILENO);
 		return (-1);
@@ -66,12 +66,13 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 	marge_sort(&stack_a, &stack_b);
-	test_print(stack_a, "stack_a");
-	// test(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
 }
+
+	// test_print(stack_a, "stack_a");
+	// test(stack_a, stack_b);
 
 // void	memo()
 // {

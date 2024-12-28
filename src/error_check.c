@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 19:40:24 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/25 04:23:04 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/28 13:30:24 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int	is_intstr(char *str)
 	if (*str == '-' || *str == '+')
 		str++;
 	if (*str == '\0')
-		return (true);
+		return (false);
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
+		if (ft_isdigit(*str) == false)
 			return (false);
 		str++;
 	}
@@ -60,12 +60,10 @@ int	is_int(char *str)
 	return (true);
 }
 
-int	error_check(int argc, char **argv)
+int	error_check(char **argv)
 {
 	int	i;
 
-	if (argc == 2)
-		argv[1] = *ft_split(argv[1], ' ');
 	i = 1;
 	while (argv[i] != NULL)
 	{
@@ -75,8 +73,3 @@ int	error_check(int argc, char **argv)
 	}
 	return (0);
 }
-// 文字が入っていないか
-// ↓
-// atoiでint型に入れる
-// ↓
-// INT_MAX || INT_MINを超えてないか

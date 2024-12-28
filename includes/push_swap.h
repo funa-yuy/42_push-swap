@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:27:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 23:53:52 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/28 13:32:19 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ long int	ps_atoi_check(const char *str, int i, int sign);
 long int	ps_atoi(const char *str);
 
 // Error check
-int			error_check(int argc, char **argv);
+int			error_check(char **argv);
 int			is_int(char *str);
 int			is_intstr(char *str);
 int			has_dup(t_stack **stack);

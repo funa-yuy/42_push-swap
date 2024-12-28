@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 21:41:45 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/28 12:55:54 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	check;
 
+	if (sort_check(*stack_a) == 1)
+		return ;
 	check = -1;
 	while (check == -1)
 	{
