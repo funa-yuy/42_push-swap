@@ -6,7 +6,7 @@
 #    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/12/26 20:42:49 by miyuu            ###   ########.fr        #
+#    Updated: 2024/12/29 01:45:29 by miyuu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ sort_rotate.c \
 sort_swap.c \
 merge_operations.c \
 merge_diff.c
-
 
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
