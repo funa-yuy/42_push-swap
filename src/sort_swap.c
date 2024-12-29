@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 02:23:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 23:26:29 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/30 02:40:34 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,3 @@ void	ss(t_stack **stack_a, t_stack **stack_b)
 	sb(stack_b);
 	ft_putendl_fd("ss", STDOUT_FILENO);
 }
-
-// メモ・：トップ2個もないのにswapしようとしている時点でおかしいので、return;ではなくexit (1)でプログラムを終了ささせる

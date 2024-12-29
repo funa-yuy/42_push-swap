@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 20:37:04 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 21:12:42 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/30 02:38:15 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,3 @@ void	marge_ascend_btoa(t_stack **stack_a, t_stack **stack_b)
 		pa(stack_a, stack_b);
 	}
 }
-// メモ：else if (diff == 1)ないのsa・sbはra・rbでもよき？

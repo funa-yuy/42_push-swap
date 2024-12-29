@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 04:09:55 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 21:37:41 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/30 01:43:24 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,43 +58,3 @@ t_stack	*create_stack(int argc, char **argv)
 	}
 	return (stack);
 }
-
-// t_stack	*create_stack(int argc, char **argv)
-// {
-// 	t_stack	*s_new;
-// 	t_stack	*tmp;
-// 	t_stack	*node;
-// 	int		i;
-
-// 	s_new = NULL;
-// 	s_new = (t_stack *)malloc(sizeof(t_stack));
-// 	if (s_new == NULL)
-// 		return (NULL);
-// 	s_new -> nbr = ps_atoi(argv[1]);
-
-// 	if (argc == 2)
-// 	{
-// 		s_new -> prev = s_new;
-// 		s_new -> next = s_new;
-// 		return (s_new);
-// 	}
-// 	else
-// 	{
-// 		tmp = s_new;
-// 		i = 2;
-// 		while (argc - 1 >= i)
-// 		{
-// 			node = (t_stack *)malloc(sizeof(t_stack));
-// 			if (node == NULL)
-// 				return (NULL);
-// 			node -> prev = tmp;
-// 			tmp -> next = node;
-// 			node -> nbr = ps_atoi(argv[i]);
-// 			tmp = tmp -> next;
-// 			i++;
-// 		}
-// 		s_new -> prev = node;
-// 		node -> next = s_new;
-// 	}
-// 	return (s_new);
-// }

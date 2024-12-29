@@ -6,43 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/29 22:19:00 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/30 01:45:22 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-// void	test_print(t_stack *stack, char *str)
-// {
-// 	t_stack	*tmp;
-
-// 	tmp = stack;
-// 	printf("%s: ", str);
-// 	if (tmp != NULL)
-// 	{
-// 		do
-// 		{
-// 		printf("%d ", tmp->nbr);
-// 		tmp = tmp->next;
-// 		}
-// 		while
-// 		(tmp != stack);
-// 	}
-// 	printf("\n");
-// }
-
-// void	test(t_stack *stack_a, t_stack *stack_b)
-// {
-// 	pb(&stack_a, &stack_b);
-// 	test_print(stack_a, "stack_a");
-// 	test_print(stack_b, "stack_b");
-// 	pb(&stack_a, &stack_b);
-// 	test_print(stack_a, "stack_a");
-// 	test_print(stack_b, "stack_b");
-// 	pa(&stack_a, &stack_b);
-// 	test_print(stack_a, "stack_a");
-// 	test_print(stack_b, "stack_b");
-// }
 
 int	main(int argc, char **argv)
 {
@@ -70,52 +38,3 @@ int	main(int argc, char **argv)
 	free_stack(stack_b);
 	return (0);
 }
-	// test_print(stack_a, "stack_a");
-	// test(stack_a, stack_b);
-
-// void	memo()
-// {
-
-	// string s="123456789";
-	//	struct s_stack	*stack_b;
-	// int i = 1000;
-	// int *pi = &i;
-	// char *pc = &i;
-
-	// *pi;
-	// *pc;
-	// *
-	// char *pc = &c;
-	// char string[6] = "aiueo";
-	// char c = 'a';
-	// struct s_stack *p1,*p2,*p3;
-/*
-	stack_a = (t_stack *)malloc(sizeof(t_stack));
-	if (stack_a == NULL);
-		retuen(NULL);
-	stack_a -> nbr = argc;
-
-
-	p1 = (t_stack *)malloc(sizeof(t_stack));
-	if (p1 == NULL);
-		retuen(NULL);
-	stack_a -> next  = &p1;
-	p1 -> nbr = 2;
-
-
-	p2 = (t_stack *)malloc(sizeof(t_stack));
-	if (p2 == NULL);
-		retuen(NULL);
-	p1 -> next  = &p2;
-	p2 -> nbr = 3;
-
-
-	// if (argc == 1)
-	// 	return (1);
-
-	p2 -> next  = &p3;
-
-
-	// stack_b.nbr = p1.next;
-*/
-// }

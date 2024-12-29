@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/29 21:59:56 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/30 02:39:23 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,29 +62,6 @@ void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	sort_3size(t_stack **stack)
-{
-	int	first;
-	int	second;
-	int	last;
-	int	check;
-
-	check = false;
-	while (check == false)
-	{
-		first = (*stack)-> nbr;
-		second = (*stack)-> next -> nbr;
-		last = (*stack)-> prev -> nbr;
-		if (first < second && last < second)
-			rra(stack);
-		else if (second < first && first < last)
-			sa(stack);
-		else if (second < first && last < first)
-			ra(stack);
-		check = sort_check(*stack);
-	}
-}
-
 int	sort_check(t_stack *stack)
 {
 	t_stack	*now_nbr;
@@ -132,4 +109,3 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 		}
 	}
 }
-// メモ：else if (second >= first && second >= last)ないのsa・sbはra・rbでもよき？
