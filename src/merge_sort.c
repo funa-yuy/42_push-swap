@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/28 12:55:54 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/29 15:59:49 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ int	sort_check(t_stack *stack)
 		{
 			next_nbr = next_nbr -> next;
 			if (now_nbr -> nbr > next_nbr -> nbr)
-				return (0);
+				return (false);
 		}
 		now_nbr = now_nbr -> next;
 	}
-	return (1);
+	return (true);
 }
 
 void	marge_sort(t_stack **stack_a, t_stack **stack_b)
@@ -88,15 +88,14 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 
 	if (sort_check(*stack_a) == 1)
 		return ;
-	check = -1;
-	while (check == -1)
+	check = false;
+	while (check == false)
 	{
 		if (*stack_a == NULL)
 		{
 			marge_first_btoa(stack_a, stack_b);
 			marge_sort_btoa(stack_a, stack_b);
-			if (sort_check(*stack_a) == 1)
-				break ;
+			check = sort_check(*stack_a);
 		}
 		else if (*stack_b == NULL)
 		{
