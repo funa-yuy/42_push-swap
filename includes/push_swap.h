@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:27:45 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/28 13:32:19 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/29 16:42:52 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int			calc_diff_ascend(int target, int first, int second, int last);
 int			calc_diff_descend(int target, int first, int second, int last);
 long long	safe_diff(long long int a, long long int b);
 
+void	sort_3size(t_stack **stack);
+size_t	ft_stacksize(t_stack *stack);
 // operations
 void		remove_targe_node(t_stack **s_dst, t_stack *node);
 void		push_to_dst(t_stack **s_src, t_stack *node);

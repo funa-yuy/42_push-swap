@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/29 15:59:49 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/29 16:47:51 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,30 @@ void	marge_first_btoa(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+void	sort_3size(t_stack **stack)
+{
+	int	first;
+	int	second;
+	int	last;
+	int	check;
+
+	first = (*stack)-> nbr;
+	second = (*stack)-> next -> nbr;
+	last = (*stack)-> prev -> nbr;
+
+	check = false;
+	while (check == false)
+	{
+		if (first < second && last < second)
+			rra(stack);
+		else if (second < first && first < last)
+			sa(stack);
+		else if (second < first && last < first)
+			ra(stack);
+		check = sort_check(*stack);
+	}
+}
+
 int	sort_check(t_stack *stack)
 {
 	t_stack	*now_nbr;
@@ -88,19 +112,24 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 
 	if (sort_check(*stack_a) == 1)
 		return ;
-	check = false;
-	while (check == false)
+	if (ft_stacksize(*stack_a) == 3)
+		sort_3size(stack_a);
+	else
 	{
-		if (*stack_a == NULL)
+		check = false;
+		while (check == false)
 		{
-			marge_first_btoa(stack_a, stack_b);
-			marge_sort_btoa(stack_a, stack_b);
-			check = sort_check(*stack_a);
-		}
-		else if (*stack_b == NULL)
-		{
-			marge_first_atob(stack_a, stack_b);
-			marge_sort_atob(stack_a, stack_b);
+			if (*stack_a == NULL)
+			{
+				marge_first_btoa(stack_a, stack_b);
+				marge_sort_btoa(stack_a, stack_b);
+				check = sort_check(*stack_a);
+			}
+			else if (*stack_b == NULL)
+			{
+				marge_first_atob(stack_a, stack_b);
+				marge_sort_atob(stack_a, stack_b);
+			}
 		}
 	}
 }
