@@ -6,13 +6,13 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:35:16 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/26 21:40:24 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/30 03:20:19 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ascend_or_descend(t_stack **s_src, t_stack **s_dst, int check)
+int	descend_or_ascend(t_stack **s_src, t_stack **s_dst, int check)
 {
 	int	first;
 	int	second;
@@ -42,7 +42,7 @@ void	marge_sort_atob(t_stack **stack_a, t_stack **stack_b)
 			pb(stack_a, stack_b);
 			break ;
 		}
-		check = ascend_or_descend(stack_a, stack_b, check);
+		check = descend_or_ascend(stack_a, stack_b, check);
 		if (check == 1)
 			marge_descend_atob(stack_a, stack_b);
 		else if (check == 2)
@@ -64,7 +64,7 @@ void	marge_sort_btoa(t_stack **stack_a, t_stack **stack_b)
 			pa(stack_a, stack_b);
 			break ;
 		}
-		check = ascend_or_descend(stack_b, stack_a, check);
+		check = descend_or_ascend(stack_b, stack_a, check);
 		if (check == 1)
 			marge_descend_btoa(stack_a, stack_b);
 		else if (check == 2)
