@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:05:13 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/29 16:47:51 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/29 21:59:56 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,12 @@ void	sort_3size(t_stack **stack)
 	int	last;
 	int	check;
 
-	first = (*stack)-> nbr;
-	second = (*stack)-> next -> nbr;
-	last = (*stack)-> prev -> nbr;
-
 	check = false;
 	while (check == false)
 	{
+		first = (*stack)-> nbr;
+		second = (*stack)-> next -> nbr;
+		last = (*stack)-> prev -> nbr;
 		if (first < second && last < second)
 			rra(stack);
 		else if (second < first && first < last)
@@ -110,10 +109,10 @@ void	marge_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	check;
 
-	if (sort_check(*stack_a) == 1)
+	if (sort_check(*stack_a) == true)
 		return ;
-	if (ft_stacksize(*stack_a) == 3)
-		sort_3size(stack_a);
+	if (ft_stacksize(*stack_a) <= 5)
+		sort_short(stack_a, stack_b);
 	else
 	{
 		check = false;

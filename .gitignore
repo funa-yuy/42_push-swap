@@ -6,8 +6,7 @@ a.out.dSYM/
 push_swap_tester/
 Push-Swap-Tester/
 push_swap_test.sh
-traces.txt
-result.txt
+*.txt
 checker_Mac
 checker_linux
 push_swap

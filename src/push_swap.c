@@ -6,30 +6,30 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:28:57 by miyuu             #+#    #+#             */
-/*   Updated: 2024/12/29 16:00:18 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/12/29 22:19:00 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	test_print(t_stack *stack, char *str)
-{
-	t_stack	*tmp;
+// void	test_print(t_stack *stack, char *str)
+// {
+// 	t_stack	*tmp;
 
-	tmp = stack;
-	printf("%s: ", str);
-	if (tmp != NULL)
-	{
-		do
-		{
-		printf("%d ", tmp->nbr);
-		tmp = tmp->next;
-		}
-		while
-		(tmp != stack);
-	}
-	printf("\n");
-}
+// 	tmp = stack;
+// 	printf("%s: ", str);
+// 	if (tmp != NULL)
+// 	{
+// 		do
+// 		{
+// 		printf("%d ", tmp->nbr);
+// 		tmp = tmp->next;
+// 		}
+// 		while
+// 		(tmp != stack);
+// 	}
+// 	printf("\n");
+// }
 
 // void	test(t_stack *stack_a, t_stack *stack_b)
 // {
@@ -66,12 +66,11 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 	marge_sort(&stack_a, &stack_b);
-	test_print(stack_a, "stack_a");
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
 }
-
+	// test_print(stack_a, "stack_a");
 	// test(stack_a, stack_b);
 
 // void	memo()

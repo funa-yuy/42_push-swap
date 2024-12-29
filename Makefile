@@ -6,11 +6,11 @@
 #    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/12/29 16:42:42 by miyuu            ###   ########.fr        #
+#    Updated: 2024/12/29 22:07:20 by miyuu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc -g -fsanitize=address
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
@@ -20,19 +20,21 @@ LIBFT_DIR = ./libft
 
 # Source files
 SRC_FILES = create_stack.c \
-push_swap.c \
+error_check.c \
 free_stack.c \
 ft_stacksize.c \
 marge_move.c \
+merge_operations.c \
+merge_diff.c \
 ps_atoi.c \
-error_check.c \
+push_swap.c \
 merge_sort.c \
 sort_push.c \
 sort_reverse_rotate.c \
 sort_rotate.c \
-sort_swap.c \
-merge_operations.c \
-merge_diff.c
+sort_short_utils.c \
+sort_short.c \
+sort_swap.c
 
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
